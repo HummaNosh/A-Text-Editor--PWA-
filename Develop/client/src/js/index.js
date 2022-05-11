@@ -2,6 +2,7 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import {regeneratorRuntime} from "regenerator-runtime";
 
 const main = document.querySelector('#main');
 main.innerHTML = '';

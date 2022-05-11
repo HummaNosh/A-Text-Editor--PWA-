@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+// const WorkboxPlugin = require('workbox-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 // Add and configure workbox plugins for a service worker and manifest file.
@@ -28,8 +29,9 @@ module.exports = () => {
     // HN
     new InjectManifest({
       swSrc: './src-sw.js',
-      swDest: 'service-worker.js',
+      swDest: './service-worker.js',
     }),
+    // new WorkboxPlugin.GenerateSW(),
     // Creates a manifest.json file.
     new WebpackPwaManifest({
       fingerprints: false,
@@ -39,11 +41,11 @@ module.exports = () => {
       description: 'Edit the text',
       background_color: '#225ca3',
       theme_color: '#225ca3',
-      start_url: '/',
-      publicPath: '/',
+      start_url: './',
+      publicPath: './',
       icons: [
         {
-        src: path.resolve('src/images/logo.png'),
+        src: path.resolve('./src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets', 'icons'),
         },
