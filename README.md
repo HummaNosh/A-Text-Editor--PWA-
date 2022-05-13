@@ -38,6 +38,6 @@ THEN I should have my static assets pre cached upon loading along with subsequen
 WHEN I deploy to Heroku
 THEN I should have proper build scripts for a webpack application
 ```
-## Deployed link to Heroku:
+## Deployed link to Heroku: 
 
 https://tranquil-spire-75759.herokuapp.com/
